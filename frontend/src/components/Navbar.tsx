@@ -30,10 +30,10 @@ const Navbar = () => {
 
   return (
     <nav className="bg-slate-800 text-white shadow-lg">
-      <div className="max-w-screen-xl mx-auto px-4 py-3 flex justify-between items-center">
+      <div className="max-w-screen-xl ml-10 py-3 flex justify-between items-center">
         {/* Logo */}
         <a href="/" className="flex items-center space-x-2">
-          <img src="/Jules T. Fagard.svg" alt="Logo" width={16} height={16} className='text-white'/>
+          <img src="/Jules T. Fagard.svg" alt="Logo" width={200} color='white' className='' style={{ fill: "yellow" }} />
         </a>
 
         {/* Navigation Links (Hidden on Small Screens) */}
