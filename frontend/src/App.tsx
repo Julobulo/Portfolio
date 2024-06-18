@@ -53,7 +53,7 @@ import Home from './components/Home'
 
 function App() {
   return (
-    <div className="dark">
+    <div className="bg-white dark:bg-slate-800">
       <Navbar />
       <Home />
       {/* <About />

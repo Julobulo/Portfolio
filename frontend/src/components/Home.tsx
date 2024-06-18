@@ -12,10 +12,6 @@ const Home = () => {
                             </h1>
                             <h2 className="font-general-medium mt-4 text-lg md:text-xl lg:text-2xl xl:text-3xl text-center sm:text-left leading-normal text-gray-500 dark:text-gray-200">I am a Full Stack Developer & Cybersecurity Enthusiast</h2>
                         </div>
-                        <h1 className="font-general-semibold text-2xl lg:text-3xl xl:text-4xl text-center sm:text-left text-ternary-dark dark:text-primary-light uppercase" style={{ opacity: 1 }}>Hi, I am Jules Fagard</h1>
-                        <p className="font-general-medium mt-4 text-lg md:text-xl lg:text-2xl xl:text-3xl text-center sm:text-left leading-normal text-gray-500 dark:text-gray-200" style={{ opacity: 1 }}>A Full-Stack Developer &amp; Design Enthusiast</p>
-                        <div className="flex justify-center sm:block" style={{ opacity: 1 }}>
-                        </div>
                     </div>
                     <div className="w-full sm:w-2/3 text-right float-right mt-8 sm:mt-0" style={{ opacity: 1, transform: "none" }}><img src="/static/media/developer.ef097afb.svg" alt="Developer" /></div>
                 </section>
