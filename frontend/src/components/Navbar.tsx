@@ -28,7 +28,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-slate-800 text-white shadow-lg">
+    <nav className="bg-slate-600 dark:bg-slate-800 text-white shadow-lg">
       <div className="max-w-screen-xl ml-10 py-3 flex justify-between items-center">
         {/* Logo */}
         <a href="/" className="flex items-center ml-10">
