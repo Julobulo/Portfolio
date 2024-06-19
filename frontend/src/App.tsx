@@ -1,8 +1,7 @@
-import { useState } from 'react'
-import { Routes, Route } from "react-router-dom"
-import Navbar from './components/Navbar';
+import Navbar from './components/Navbar'
 import Home from './components/Home'
-// import About from './components/About';
+import Footer from './components/Footer'
+import About from './components/About';
 // import Timeline from './components/Timeline';
 // import Projects from './components/Projects';
 // import Contact from './components/Contact';
@@ -53,14 +52,16 @@ import Home from './components/Home'
 
 function App() {
   return (
-    <div className="bg-white dark:bg-slate-800">
-      <Navbar />
-      <Home />
-      {/* <About />
-      <Timeline />
+    <div className="bg-white dark:bg-slate-800 bg-secondary-light dark:bg-primary-dark text-black dark:text-white">
+      <div className='bg-white dark:bg-black'>
+        <Navbar />
+        <Home />
+      </div>
+      <About />
+      {/* <Timeline />
       <Projects />
-      <Contact />
-      <Footer /> */}
+      <Contact /> */}
+      <Footer />
     </div>
   )
 }

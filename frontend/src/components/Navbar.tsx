@@ -1,9 +1,8 @@
 import { useState, useEffect } from 'react';
-import { FaSun, FaMoon, FaBars, FaTimes } from 'react-icons/fa';
+import { FaSun, FaMoon } from 'react-icons/fa';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isDarkModeToggleHovered, setIsDarkModeToggleHovered] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(() => {
     const savedMode = localStorage.getItem('darkMode');
     return savedMode ? JSON.parse(savedMode) : window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -32,7 +31,7 @@ const Navbar = () => {
     <nav className="bg-slate-800 text-white shadow-lg">
       <div className="max-w-screen-xl ml-10 py-3 flex justify-between items-center">
         {/* Logo */}
-        <a href="/" className="flex items-center space-x-2">
+        <a href="/" className="flex items-center ml-10">
           <img src="/Jules T. Fagard.svg" alt="Logo" width={200} color='white' className='' style={{ fill: "yellow" }} />
         </a>
 
