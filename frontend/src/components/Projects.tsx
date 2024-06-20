@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import ProjectCard from './ProjectCard';
-import { FaCode, FaIcons, FaNodeJs, FaReact } from 'react-icons/fa';
+import { FaCode, FaIcons } from 'react-icons/fa';
 import { FaArrowLeftLong, FaArrowRightLong } from 'react-icons/fa6';
 import MultiCardCarousel from "./Carousel";
 import { RiTailwindCssFill } from 'react-icons/ri';
@@ -34,32 +34,32 @@ const Projects = () => {
         switch (tag.toLowerCase().replace(/\s/g, '')) {
             case "bootstrap":
                 return <img
-                src='/bootstrap.svg'
-                style={{height: "40px", width: "50px"}}
+                    src='/bootstrap.svg'
+                    style={{ height: "40px", width: "50px" }}
                 />
             case "react":
             case "reactjs":
                 return <img
-                src='/reactjs.svg'
-                style={{height: "40px", width: "40px"}}
+                    src='/reactjs.svg'
+                    style={{ height: "40px", width: "40px" }}
                 />;
             case "node":
             case "nodejs":
-                return <img 
-                src='/nodejs.svg'
-                style={{height: "40px", width: "40px"}}
+                return <img
+                    src='/nodejs.svg'
+                    style={{ height: "40px", width: "40px" }}
                 />
             case "tailwindcss":
             case "tailwind":
                 console.log('tailwind !!!!!')
                 return <img
-                src='/tailwind.svg'
-                style={{height: "40px", width: "40px"}}
+                    src='/tailwind.svg'
+                    style={{ height: "40px", width: "40px" }}
                 />
             case "mongodb":
                 return <img
-                src="/mongodb.svg"
-                style={{height: "40px", width: "40px"}}
+                    src="/mongodb.svg"
+                    style={{ height: "40px", width: "40px" }}
                 />
             default:
                 return <FaIcons />;
@@ -72,10 +72,18 @@ const Projects = () => {
             <div className="container mx-auto px-4 py-8">
                 <div className='grid grid-cols-1 lg:grid-cols-2 gap-10'>
                     {projects.map(project => (
-                        <div key={project._id} className="bg-white dark:bg-slate-700 rounded-lg shadow-lg overflow-hidden">
+                        <div key={project._id} className="bg-white dark:bg-slate-700 rounded-lg shadow-lg overflow-hidden flex flex-col h-full">
                             <img src={project.image} alt={project.title} className="w-full h-64 object-cover object-center" />
-                            <div className="p-4">
-                                <h2 className="text-xl font-semibold mb-2">{project.title}</h2>
+                            <div className="p-4 flex-grow">
+                                <div className='flex flex-row justify-between'>
+                                    <h2 className="text-xl font-semibold mb-2">{project.title}</h2>
+                                    <p
+                                        className="inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10"
+                                        style={{ height: '30px' }}
+                                    >
+                                        ~{project.timeItTook}
+                                    </p>
+                                </div>
                                 <div className="flex flex-wrap gap-2 mb-2">
                                     {Object.keys(project.tags).map((key) => (
                                         <div
@@ -86,9 +94,24 @@ const Projects = () => {
                                             {renderTagIcon(project.tags[key])}
                                         </div>
                                     ))}
-                                    <p className="text-sm text-gray-600 dark:text-white mb-1"><strong>Time it took:</strong> {project.timeItTook}</p>
                                 </div>
                                 <p className="text-sm text-gray-700 dark:text-white">{project.description}</p>
+                            </div>
+                            <div className="flex justify-between m-4 align-bottom">
+                                <div className={`w-1/6 flex justify-center items-center rounded-lg mr-1 text-2xl bg-gray-400`}>
+                                    <a href={project.code} >
+                                        <FaCode />
+                                    </a>
+                                </div>
+                                <div className='w-5/6 ml-1'>
+                                    <a
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className={`rounded-lg block w-full py-2 px-4 text-center bg-orange-500 text-white`}
+                                    >
+                                        Live Preview
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     ))}
