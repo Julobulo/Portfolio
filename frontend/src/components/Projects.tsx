@@ -5,6 +5,7 @@ import { FaCode, FaIcons } from 'react-icons/fa';
 import { FaArrowLeftLong, FaArrowRightLong } from 'react-icons/fa6';
 import MultiCardCarousel from "./Carousel";
 import { RiTailwindCssFill } from 'react-icons/ri';
+import Spinner from './Spinner';
 const domainName = import.meta.env.VITE_API_BASE_URL;
 
 // const projects = [
@@ -18,13 +19,17 @@ const domainName = import.meta.env.VITE_API_BASE_URL;
 
 const Projects = () => {
     const [projects, setProjects] = useState([]);
+    const [loading, setLoading] = useState(true);
     useEffect(() => {
+        setLoading(true)
         axios.get(`${domainName}/projects`)
             .then((response) => {
                 setProjects(response.data);
+                setLoading(false)
             })
             .catch((error) => {
                 console.log(error);
+                setLoading(false)
             })
     }, [])
 
@@ -70,6 +75,10 @@ const Projects = () => {
                 return <FaIcons />;
         }
     };
+
+    if (loading) {
+        return <Spinner />
+    }
 
     return (
         <div className="mt-12 w-full flex flex-col items-center">

@@ -21,8 +21,8 @@ app.use(cors({
 app.use(express.json()); // Middleware to parse JSON bodies
 
 app.get('/projects', async (request, response) => {
-    const delay = ms => new Promise(resolve => setTimeout(resolve, ms))
-    await delay(1000);
+    // const delay = ms => new Promise(resolve => setTimeout(resolve, ms))
+    // await delay(1000);
     const projects = await Project.find({},
         // { image: 0 }
     ).limit(10);
