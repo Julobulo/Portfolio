@@ -30,18 +30,37 @@ const Projects = () => {
 
     // Function to render the correct icon based on the tag
     const renderTagIcon = (tag) => {
-        console.log(`icon: ${tag}`);
-        switch (tag.toLowerCase()) {
+        console.log(`icon: ${tag.toLowerCase().replace(/\s/g, '')}`);
+        switch (tag.toLowerCase().replace(/\s/g, '')) {
+            case "bootstrap":
+                return <img
+                src='/bootstrap.svg'
+                style={{height: "40px", width: "50px"}}
+                />
             case "react":
-                return <FaReact />;
+            case "reactjs":
+                return <img
+                src='/reactjs.svg'
+                style={{height: "40px", width: "40px"}}
+                />;
             case "node":
-                return <FaNodeJs />
-            case "tailwind" || "tailwind css" || "tailwindcss":
-                return <RiTailwindCssFill />
+            case "nodejs":
+                return <img 
+                src='/nodejs.svg'
+                style={{height: "40px", width: "40px"}}
+                />
+            case "tailwindcss":
+            case "tailwind":
+                console.log('tailwind !!!!!')
+                return <img
+                src='/tailwind.svg'
+                style={{height: "40px", width: "40px"}}
+                />
             case "mongodb":
                 return <img
-                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAC4klEQVR4nO1ZzW8NURS/Qgg74n8Qdjydc6bRiCBqZdNnJ11gzp1i0USCVS2EBV0Im37MOe+JRrwNC2VRrNiwI5FoQlSCin7YVIJq5b6Oph/z5s6C+ZD+kl8yyb2L3+/cc86cuaPUCv5j6AB8T1CrIkKz06IFf9TJTosqEvyBXRtJ8L0WnDUkgQ9eT2mzKgpIoPZH/ALeVUWAZmyPED9HxnaVZxztw03E8LmRAWIcy3UqkUDQMPrzpwD9Ko/wGHdoxpklYqfrXJxGM2avyhu04GBExKeI4VtEKt1TeYLPbtOy6NeFwgQxTEalkldtdlVeQAJDDYr2k2HkmsCQygN0f/OWqOiHIt9phpFGBe1XYWvW+hUxXolpm6+14HBMV7qcqfhybdvauL6vBV6QwMsYA19OXW1dl5kBCpw2S99/HrLhHgqctuwMMN6yvLSekMDTWAMCA5mI7+ravUYLjMeLw0eG8acE4+VaeXXqBvwKlGxjAzHe1wwPrONF1d2eugFi6LAbgDtmjLYaCMBP3YBm7LUKY7hdp3Uf9qZugBgfJzBQJcYbCfY9TN2AZnxrTSGBPkP7PnyTugEzqFkjK3CNGK4nKPax1A2ENw42YWbM6E5QA99TN0ACPxOcwEVivJRLA1rwawJhXXXa2+1E6gbCSdN2AmeJ8VyCVHuVuoEkb1gKsNPQbhQHMzCAFxKkRocW50SCdns+dQOeuHsT1MCxOi37/IqzJ6NpFEfjxTlH5hhr8mMm06gBsXM6NrLilqmCh211orKC11PaEHcKxM4hw7jod9ZwvcoSxLB/2e3bvED3gCfYGl24+EtX4KDKAxr1elOchpFrDGdUnkACx5eOF+b2zWe3efGpwDQxnlR5BFXQWXgLYT47F356ksAzr79pp8o1ZtWqsC5uzhswzwHuM2uqSNCCw2ZmUkWFZhgx96OqqNCCo+Z2WhUVxDCZyaz/txD+nZlSRYUO/5FlrWMF6h/iNwFD5Zin1tTcAAAAAElFTkSuQmCC">
-                </img>
+                src="/mongodb.svg"
+                style={{height: "40px", width: "40px"}}
+                />
             default:
                 return <FaIcons />;
         }
