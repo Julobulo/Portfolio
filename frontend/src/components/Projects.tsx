@@ -37,6 +37,11 @@ const Projects = () => {
                     src='/bootstrap.svg'
                     style={{ height: "40px", width: "50px" }}
                 />
+            case "express":
+                return <img
+                    src='/express.svg'
+                    style={{ height: "40px", width: "50px" }}
+                />
             case "react":
             case "reactjs":
                 return <img
@@ -98,20 +103,22 @@ const Projects = () => {
                                 <p className="text-sm text-gray-700 dark:text-white">{project.description}</p>
                             </div>
                             <div className="flex justify-between m-4 align-bottom">
-                                <div className={`w-1/6 flex justify-center items-center rounded-lg mr-1 text-2xl bg-gray-400`}>
-                                    <a href={project.code} >
-                                        <FaCode />
-                                    </a>
-                                </div>
-                                <div className='w-5/6 ml-1'>
-                                    <a
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className={`rounded-lg block w-full py-2 px-4 text-center bg-orange-500 text-white`}
-                                    >
-                                        Live Preview
-                                    </a>
-                                </div>
+                                <a
+                                    href={project.code}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className={`w-1/6 flex justify-center items-center rounded-lg mr-1 text-2xl bg-gray-400`}
+                                >
+                                    <FaCode />
+                                </a>
+                                <a
+                                    href={project.live}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className={`w-5/6 ml-1 rounded-lg block w-full py-2 px-4 text-center bg-orange-500 text-white`}
+                                >
+                                    Live Preview
+                                </a>
                             </div>
                         </div>
                     ))}
