@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import ProjectCard from './ProjectCard';
-import { FaCode, FaIcons, FaTwitter } from 'react-icons/fa';
+import { FaCode, FaGithub, FaIcons, FaTwitter } from 'react-icons/fa';
 import { FaArrowLeftLong, FaArrowRightLong } from 'react-icons/fa6';
 import MultiCardCarousel from "./Carousel";
 import { RiTailwindCssFill } from 'react-icons/ri';
@@ -46,16 +46,16 @@ const Projects = () => {
                 return <img
                     src='/express.svg'
                     style={{ height: "40px", width: "40px" }}
-                    />
+                />
             case "python":
                 return <img
-                src='/python.svg'
-                style={{ height: "50px", width: "40px" }}
+                    src='/python.svg'
+                    style={{ height: "50px", width: "40px" }}
                 />
             case "pygame":
                 return <img
-                src='/pygame.svg'
-                style={{ height: "40px", width: "80px" }}
+                    src='/pygame.svg'
+                    style={{ height: "40px", width: "80px" }}
                 />
             case "react":
             case "reactjs":
@@ -152,9 +152,30 @@ const Projects = () => {
                                         </a>
                                     </div>
                                 )
-                    }
+                            }
                         </div>
                     ))}
+                </div>
+            </div>
+            <div className="flex justify-end items-center mt-8 mx-2">
+                <span className="mr-4 text-lg font-semibold">...and so much more coming. To stay updated:</span>
+                <div className="flex space-x-4">
+                    <a
+                        href="https://twitter.com/JulesTheDev"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-blue-500 text-3xl"
+                    >
+                        <FaTwitter />
+                    </a>
+                    <a
+                        href="https://github.com/Julobulo"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-gray-800 text-3xl"
+                    >
+                        <FaGithub />
+                    </a>
                 </div>
             </div>
         </div>
