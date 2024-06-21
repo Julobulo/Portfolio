@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import ProjectCard from './ProjectCard';
-import { FaCode, FaIcons } from 'react-icons/fa';
+import { FaCode, FaIcons, FaTwitter } from 'react-icons/fa';
 import { FaArrowLeftLong, FaArrowRightLong } from 'react-icons/fa6';
 import MultiCardCarousel from "./Carousel";
 import { RiTailwindCssFill } from 'react-icons/ri';
@@ -45,7 +45,17 @@ const Projects = () => {
             case "express":
                 return <img
                     src='/express.svg'
-                    style={{ height: "40px", width: "50px" }}
+                    style={{ height: "40px", width: "40px" }}
+                    />
+            case "python":
+                return <img
+                src='/python.svg'
+                style={{ height: "50px", width: "40px" }}
+                />
+            case "pygame":
+                return <img
+                src='/pygame.svg'
+                style={{ height: "40px", width: "80px" }}
                 />
             case "react":
             case "reactjs":
@@ -111,24 +121,38 @@ const Projects = () => {
                                 </div>
                                 <p className="text-sm text-gray-700 dark:text-white">{project.description}</p>
                             </div>
-                            <div className="flex justify-between m-4 align-bottom">
-                                <a
-                                    href={project.code}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className={`w-1/6 flex justify-center items-center rounded-lg mr-1 text-2xl bg-gray-400`}
-                                >
-                                    <FaCode />
-                                </a>
-                                <a
-                                    href={project.live}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className={`w-5/6 ml-1 rounded-lg block w-full py-2 px-4 text-center bg-orange-500 text-white`}
-                                >
-                                    Live Preview
-                                </a>
-                            </div>
+                            {project.code && project.live ?
+                                <div className="flex justify-between m-4 align-bottom">
+                                    <a
+                                        href={project.code}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className={`w-1/6 flex justify-center items-center rounded-lg mr-1 text-2xl bg-gray-400`}
+                                    >
+                                        <FaCode />
+                                    </a>
+                                    <a
+                                        href={project.live}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className={`w-5/6 ml-1 rounded-lg block w-full py-2 px-4 text-center bg-orange-500 text-white`}
+                                    >
+                                        Live Preview
+                                    </a>
+                                </div>
+                                : (
+                                    <div className="flex justify-between m-4 align-bottom">
+                                        <a
+                                            href={'https://twitter.com/@JulesTheDev'}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className={`w-full ml-1 rounded-lg block py-2 px-4 text-center bg-orange-500 text-white`}
+                                        >
+                                            <FaTwitter className='inline' /> Stay updated
+                                        </a>
+                                    </div>
+                                )
+                    }
                         </div>
                     ))}
                 </div>
