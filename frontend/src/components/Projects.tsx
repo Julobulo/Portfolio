@@ -112,7 +112,7 @@ const Projects = () => {
                                     {Object.keys(project.tags).map((key) => (
                                         <div
                                             key={key}
-                                            className="px-2 py-1 rounded-full text-xs dark:bg-black"
+                                            className="px-2 py-1 rounded-full text-xs"
                                             title={project.tags[key]}
                                         >
                                             {renderTagIcon(project.tags[key])}
@@ -172,7 +172,7 @@ const Projects = () => {
                         href="https://github.com/Julobulo"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-gray-800 text-3xl"
+                        className="text-gray-800 dark:text-white text-3xl"
                     >
                         <FaGithub />
                     </a>
