@@ -8,6 +8,13 @@ const Navbar = () => {
     return savedMode ? JSON.parse(savedMode) : window.matchMedia('(prefers-color-scheme: dark)').matches;
   });
 
+  const handleScroll = (to: string) => {
+    const element = document.getElementById(to);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   useEffect(() => {
     const htmlElement = document.documentElement;
 
@@ -37,10 +44,10 @@ const Navbar = () => {
 
         {/* Navigation Links (Hidden on Small Screens) */}
         <div className="hidden md:flex items-center space-x-8">
-          <a href="/about" className="hover:text-gray-300">About</a>
+          <button onClick={() => handleScroll('about')} className="hover:text-gray-300">About</button>
           {/* <a href="/timeline" className="hover:text-gray-300">Timeline</a> */}
-          <a href="/projects" className="hover:text-gray-300">Projects</a>
-          <a href="mailto:jules.caoeiros@gmail.com" className="hover:text-gray-300">Contact</a>
+          <button onClick={() => handleScroll('projects')} className="hover:text-gray-300">Projects</button>
+          <button onClick={() => handleScroll('contact')} className="hover:text-gray-300">Contact</button>
         </div>
 
         {/* Dark Mode Toggle */}

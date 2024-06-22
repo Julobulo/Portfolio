@@ -91,8 +91,8 @@ const Projects = () => {
     }
 
     return (
-        <div className="mt-12 w-full flex flex-col items-center">
-            <h2 className="text-3xl font-bold mb-6">My Projects</h2>
+        <div className="mt-12 w-full flex flex-col items-center" id='projects'>
+            <h2 className="text-3xl font-bold my-6">My Projects</h2>
             <div className="container mx-auto px-4 py-8">
                 <div className='grid grid-cols-1 lg:grid-cols-2 gap-10'>
                     {projects.map(project => (
