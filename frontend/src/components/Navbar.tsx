@@ -38,9 +38,9 @@ const Navbar = () => {
         {/* Navigation Links (Hidden on Small Screens) */}
         <div className="hidden md:flex items-center space-x-8">
           <a href="/about" className="hover:text-gray-300">About</a>
-          <a href="/timeline" className="hover:text-gray-300">Timeline</a>
+          {/* <a href="/timeline" className="hover:text-gray-300">Timeline</a> */}
           <a href="/projects" className="hover:text-gray-300">Projects</a>
-          <a href="/contact" className="hover:text-gray-300">Contact</a>
+          <a href="mailto:jules.caoeiros@gmail.com" className="hover:text-gray-300">Contact</a>
         </div>
 
         {/* Dark Mode Toggle */}
