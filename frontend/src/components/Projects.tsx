@@ -4,6 +4,47 @@ import { FaCode, FaGithub, FaIcons, FaTwitter } from 'react-icons/fa';
 import Spinner from './Spinner';
 const domainName = import.meta.env.VITE_API_BASE_URL;
 
+// Function to parse and replace links in the description
+const parseLinks = (text: string) => {
+    const regex = /\(([^)]+)\)\[([^\]]+)\]/g;
+    const parts = [];
+    let lastIndex = 0;
+    let match;
+
+    while ((match = regex.exec(text)) !== null) {
+        const [fullMatch, linkText, url] = match;
+        const start = match.index;
+        const end = regex.lastIndex;
+
+        // Push the text before the link
+        if (start > lastIndex) {
+            parts.push(text.substring(lastIndex, start));
+        }
+
+        // Push the link
+        parts.push(
+            <a
+                key={url + start} // Unique key for each link
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ textDecoration: 'underline' }}
+            >
+                {linkText}
+            </a>
+        );
+
+        lastIndex = end;
+    }
+
+    // Push any remaining text after the last link
+    if (lastIndex < text.length) {
+        parts.push(text.substring(lastIndex));
+    }
+
+    return parts;
+};
+
 const Projects = () => {
     // Define a TypeScript interface for the project data
     interface Project {
@@ -121,7 +162,7 @@ const Projects = () => {
                                         </div>
                                     ))}
                                 </div>
-                                <p className="text-sm text-gray-700 dark:text-white">{project.description}</p>
+                                <p className="text-sm text-gray-700 dark:text-white">{parseLinks(project.description)}</p>
                             </div>
                             {project.code && project.live ?
                                 (<div className="flex justify-between m-4 align-bottom">
