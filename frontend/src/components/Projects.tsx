@@ -122,7 +122,7 @@ const Projects = () => {
                                 <p className="text-sm text-gray-700 dark:text-white">{project.description}</p>
                             </div>
                             {project.code && project.live ?
-                                <div className="flex justify-between m-4 align-bottom">
+                                (<div className="flex justify-between m-4 align-bottom">
                                     <a
                                         href={project.code}
                                         target="_blank"
@@ -135,23 +135,47 @@ const Projects = () => {
                                         href={project.live}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className={`w-5/6 ml-1 rounded-lg block w-full py-2 px-4 text-center bg-orange-500 text-white`}
+                                        className={`w-5/6 ml-1 rounded-lg block py-2 px-4 text-center bg-orange-500 text-white`}
                                     >
                                         Live Preview
                                     </a>
-                                </div>
-                                : (
+                                </div>) : (<></>)
+                            }
+                            {project.code && !project.live ?
+                                (
                                     <div className="flex justify-between m-4 align-bottom">
+                                        <a
+                                            href={project.code}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className={`w-1/6 flex justify-center items-center rounded-lg mr-1 text-2xl bg-gray-400`}
+                                        >
+                                            <FaCode />
+                                        </a>
                                         <a
                                             href={'https://twitter.com/@JulesTheDev'}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className={`w-full ml-1 rounded-lg block py-2 px-4 text-center bg-orange-500 text-white`}
+                                            className={`w-5/6 ml-1 rounded-lg block py-2 px-4 text-center bg-orange-500 text-white`}
                                         >
                                             <FaTwitter className='inline' /> Stay updated
                                         </a>
                                     </div>
-                                )
+                                ) : (<></>)
+                            }
+                            {!project.code && project.live ?
+                                (
+                                    <div className="flex justify-between m-4 align-bottom">
+                                        <a
+                                            href={project.live}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className={`w-full ml-1 rounded-lg block py-2 px-4 text-center bg-orange-500 text-white`}
+                                        >
+                                            Live Preview
+                                        </a>
+                                    </div>
+                                ) : (<></>)
                             }
                         </div>
                     ))}
