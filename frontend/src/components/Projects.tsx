@@ -121,6 +121,16 @@ const Projects = () => {
                     src="/mongodb.svg"
                     style={{ height: "40px", width: "40px" }}
                 />
+            case "mantine":
+                return <img
+                    src='/mantine.svg'
+                    style={{ height: "40px", width: "40px" }}
+                />
+            case "vite":
+                return <img
+                    src='/vite.svg'
+                    style={{ height: "40px", width: "40px" }}
+                />
             default:
                 return <FaIcons />;
         }
