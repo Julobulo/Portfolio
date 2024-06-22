@@ -1,24 +1,22 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import ProjectCard from './ProjectCard';
 import { FaCode, FaGithub, FaIcons, FaTwitter } from 'react-icons/fa';
-import { FaArrowLeftLong, FaArrowRightLong } from 'react-icons/fa6';
-import MultiCardCarousel from "./Carousel";
-import { RiTailwindCssFill } from 'react-icons/ri';
 import Spinner from './Spinner';
 const domainName = import.meta.env.VITE_API_BASE_URL;
 
-// const projects = [
-//     { id: 1, title: 'Project 1' },
-//     { id: 2, title: 'Project 2' },
-//     { id: 3, title: 'Project 3' },
-//     { id: 4, title: 'Project 4' },
-//     { id: 5, title: 'Project 5' },
-//     { id: 6, title: 'Project 6' },
-// ];
-
 const Projects = () => {
-    const [projects, setProjects] = useState([]);
+    // Define a TypeScript interface for the project data
+    interface Project {
+        _id: string;
+        title: string;
+        image: string;
+        timeItTook: string;
+        tags: Record<string, string>;
+        description: string;
+        code?: string;
+        live?: string;
+    }
+    const [projects, setProjects] = useState<Project[]>([]);
     const [loading, setLoading] = useState(true);
     useEffect(() => {
         setLoading(true)
@@ -34,7 +32,7 @@ const Projects = () => {
     }, [])
 
     // Function to render the correct icon based on the tag
-    const renderTagIcon = (tag) => {
+    const renderTagIcon = (tag: string) => {
         console.log(`icon: ${tag.toLowerCase().replace(/\s/g, '')}`);
         switch (tag.toLowerCase().replace(/\s/g, '')) {
             case "bootstrap":
