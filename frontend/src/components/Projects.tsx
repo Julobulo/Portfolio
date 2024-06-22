@@ -15,6 +15,7 @@ const Projects = () => {
         description: string;
         code?: string;
         live?: string;
+        date: string;
     }
     const [projects, setProjects] = useState<Project[]>([]);
     const [loading, setLoading] = useState(true);
@@ -98,7 +99,10 @@ const Projects = () => {
                             <img src={project.image} alt={project.title} className="w-full h-64 object-cover object-center" />
                             <div className="p-4 flex-grow">
                                 <div className='flex flex-row justify-between'>
-                                    <h2 className="text-xl font-semibold mb-2">{project.title}</h2>
+                                    <div>
+                                        <h2 className="text-xl font-semibold mb-2">{project.title}</h2>
+                                        <p className="text-xs text-gray-500 mb-2">Started: {project.date}</p>
+                                    </div>
                                     <p
                                         className="inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10"
                                         style={{ height: '30px' }}
