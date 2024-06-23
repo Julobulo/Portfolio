@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import cors from "cors";
 import mongoose from "mongoose";
 import Project from "./models/ProjectModel.js";
+import Message from "./models/MessageModel.js";
 dotenv.config();
 const { PORT, DB_URL } = process.env;
 
@@ -21,12 +22,19 @@ app.use(cors({
 app.use(express.json()); // Middleware to parse JSON bodies
 
 app.get('/projects', async (request, response) => {
-    // const delay = ms => new Promise(resolve => setTimeout(resolve, ms))
-    // await delay(1000);
     const projects = await Project.find({},
         // { image: 0 }
     ).limit(10);
     return response.json(projects);
+})
+
+app.post('/message', async (request, response) => {
+    const { name, email, message } = request.body;
+    if (!name || !email || !message) {
+        return response.status(400).json({ message: "Please send all the required fields" })
+    }
+    const newMessage = await Message.create({ name, email, message });
+    return response.status(201).json({ message: "successfully sent message!" });
 })
 
 mongoose
