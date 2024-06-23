@@ -33,6 +33,22 @@ app.post('/message', async (request, response) => {
     if (!name || !email || !message) {
         return response.status(400).json({ message: "Please send all the required fields" })
     }
+    const sameMessage = await Message.find({ name, email, message })
+    if (sameMessage.length > 0) {
+        return response.status(400).json({ message: "error processing message" })
+    }
+    const messagesFromSamePerson = await Message.find({ name })
+    if (messagesFromSamePerson.length > 4) {
+        return response.status(400).json({ message: "error processing message" })
+    }
+    const messagesFromSameEmail = await Message.find({ email })
+    if (messagesFromSameEmail.length > 4) {
+        return response.status(400).json({ message: "error processing message" })
+    }
+    const messagesSameContent = await Message.find({ message })
+    if (messagesSameContent.length > 0) {
+        return response.status(400).json({ message: "error processing message" })
+    }
     const newMessage = await Message.create({ name, email, message });
     return response.status(201).json({ message: "successfully sent message!" });
 })
