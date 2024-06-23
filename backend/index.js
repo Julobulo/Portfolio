@@ -6,7 +6,7 @@ import Project from "./models/ProjectModel.js";
 import Message from "./models/MessageModel.js";
 import nodemailer from "nodemailer";
 dotenv.config();
-const { PORT, DB_URL, GMAIL_API_KEY } = process.env;
+const { PORT, DB_URL, EMAIL_SENDER, GMAIL_API_KEY, EMAIL_RECEIVER } = process.env;
 
 const app = express();
 
@@ -30,9 +30,6 @@ app.get('/projects', async (request, response) => {
 })
 
 function sendMail(message) {
-    const emailSender = process.env.EMAIL_SENDER;
-    const gmailApiKey = process.env.GMAIL_API_KEY;
-    const emailReceiver = process.env.EMAIL_RECEIVER;
     const subject = 'New message from your portfolio';
     const body = `
     Hey, you just received received the following message from your portfolio's contact form:
@@ -43,15 +40,15 @@ function sendMail(message) {
     const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-            user: emailSender,
-            pass: gmailApiKey
+            user: EMAIL_SENDER,
+            pass: GMAIL_API_KEY
         }
     });
 
     // Email options
     const mailOptions = {
-        from: emailSender,
-        to: emailReceiver,
+        from: EMAIL_SENDER,
+        to: EMAIL_RECEIVER,
         subject: subject,
         text: body
     };
