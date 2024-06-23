@@ -12,7 +12,7 @@ const parseLinks = (text: string) => {
     let match;
 
     while ((match = regex.exec(text)) !== null) {
-        const [fullMatch, linkText, url] = match;
+        const [, linkText, url] = match;
         const start = match.index;
         const end = regex.lastIndex;
 
