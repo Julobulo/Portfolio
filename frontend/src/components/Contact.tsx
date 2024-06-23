@@ -1,3 +1,5 @@
+import { FiSend } from "react-icons/fi";
+
 const Contact = () => {
     return (
         <section className="body-font relative bg-slate-100 dark:bg-slate-900 text-gray-700 dark:text-gray-400 mt-20" id="contact">
@@ -61,8 +63,9 @@ const Contact = () => {
                             </div>
                         </div>
                         <div className="w-full p-2">
-                            <button className="mx-auto flex rounded border-0 bg-indigo-500 py-2 px-8 text-lg text-white hover:bg-indigo-600 focus:outline-none">
-                                Button
+                            <button className="mx-auto flex items-center gap-2 rounded border-0 bg-indigo-500 py-2 px-8 text-lg text-white hover:bg-indigo-600 focus:outline-none">
+                                <FiSend />
+                                Send
                             </button>
                         </div>
                     </div>
