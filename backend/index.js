@@ -4,8 +4,9 @@ import cors from "cors";
 import mongoose from "mongoose";
 import Project from "./models/ProjectModel.js";
 import Message from "./models/MessageModel.js";
+import nodemailer from "nodemailer";
 dotenv.config();
-const { PORT, DB_URL } = process.env;
+const { PORT, DB_URL, GMAIL_API_KEY } = process.env;
 
 const app = express();
 
@@ -27,6 +28,42 @@ app.get('/projects', async (request, response) => {
     ).limit(10);
     return response.json(projects);
 })
+
+function sendMail(message) {
+    const emailSender = process.env.EMAIL_SENDER;
+    const gmailApiKey = process.env.GMAIL_API_KEY;
+    const emailReceiver = process.env.EMAIL_RECEIVER;
+    const subject = 'New message from your portfolio';
+    const body = `
+    Hey, you just received received the following message from your portfolio's contact form:
+    ${message}
+    `;
+
+    // Create a transporter object using the default SMTP transport
+    const transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+            user: emailSender,
+            pass: gmailApiKey
+        }
+    });
+
+    // Email options
+    const mailOptions = {
+        from: emailSender,
+        to: emailReceiver,
+        subject: subject,
+        text: body
+    };
+
+    // Send email
+    transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+            return console.log(`Error: ${error}`);
+        }
+        console.log('Email sent: ' + info.response);
+    });
+}
 
 app.post('/message', async (request, response) => {
     const { name, email, message } = request.body;
@@ -50,6 +87,7 @@ app.post('/message', async (request, response) => {
         return response.status(400).json({ message: "error processing message" })
     }
     const newMessage = await Message.create({ name, email, message });
+    sendMail(message)
     return response.status(201).json({ message: "successfully sent message!" });
 })
 
