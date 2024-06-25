@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { FiSend } from "react-icons/fi";
+const domainName = import.meta.env.VITE_API_BASE_URL;
 
 const Contact = () => {
     const [name, setName] = useState("");
@@ -18,7 +19,7 @@ const Contact = () => {
         }
 
         try {
-            const response = await fetch('http://localhost:5555/message', {
+            const response = await fetch(`${domainName}/message`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
