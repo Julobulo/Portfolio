@@ -8,10 +8,10 @@ const Home = () => {
                 {/* Text Section */}
                 <div className="sm:w-1/2 text-center sm:text-left mb-8 sm:mb-0">
                     <span className="text-lg font-body uppercase font-normal text-gray-600 dark:text-gray-300 block pb-1">
-                        Hi, my name is
+                        Welcome, my name is
                     </span>
                     <h1 className="text-6xl md:text-9xl font-bold leading-tight text-black dark:text-white pb-4">
-                        Jules
+                        Jules Fagard
                     </h1>
                     <h2 className="text-lg md:text-xl lg:text-2xl xl:text-3xl font-medium text-gray-600 dark:text-gray-300">
                         I am a Full Stack Developer & Cybersecurity Enthusiast
