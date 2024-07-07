@@ -21,9 +21,9 @@
 </center>
 
 
-## TL;DR
+## NOTE
 
-You can fork this repo to modify and make changes of your own. Please give proper credit by linking back to [yourusername](https://github.com/yourusername/yourportfolio). Thanks!
+You can fork this repo to modify and make changes of your own. Please give proper credit by linking back to [Julobulo](https://github.com/Julobulo/Portfolio). Thanks!
 
 ## Built With
 
