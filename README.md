@@ -27,7 +27,7 @@ You can fork this repo to modify and make changes of your own. Please give prope
 
 ## Built With
 
-My personal portfolio <a href="https://yourportfolio.com" target="_blank">yourportfolio.com</a> which features some of my GitHub projects as well as my resume and technical skills.
+My personal portfolio <a href="https://jules.tf" target="_blank">jules.tf</a> (which by the way stands for Jules T. Fagard) features some of my GitHub projects as well as my resume and technical skills.
 
 This project was built using these technologies:
 
@@ -37,6 +37,7 @@ This project was built using these technologies:
 - Tailwind CSS
 - VsCode
 - Vercel
+- Git
 
 ## Features
 
