@@ -29,11 +29,13 @@ app.get('/projects', async (request, response) => {
     return response.json(projects);
 })
 
-function sendMail(message) {
+function sendMail(message, name, email) {
     const subject = 'New message from your portfolio';
     const body = `
     Hey, you just received received the following message from your portfolio's contact form:
     ${message}
+
+    It was sent by ${name} (${email})
     `;
 
     // Create a transporter object using the default SMTP transport
@@ -84,7 +86,7 @@ app.post('/message', async (request, response) => {
         return response.status(400).json({ message: "error processing message" })
     }
     const newMessage = await Message.create({ name, email, message });
-    sendMail(message)
+    sendMail(message, name, email)
     return response.status(201).json({ message: "successfully sent message!" });
 })
 
