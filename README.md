@@ -41,11 +41,11 @@ This project was built using these technologies:
 
 ## Features
 
-**📖 Multi-Page Layout**
+**📖 Single-Page Layout**
 
-**🎨 Styled with Tailwind CSS with easy to customize colors**
+**🎨 Styled with Tailwind CSS**
 
-**📱 Fully Responsive**
+**📱 Fully Responsive Design**
 
 ## Getting Started
 
