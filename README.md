@@ -74,7 +74,7 @@ The page will reload if you make edits.
 
 ## Usage Instructions
 
-Open the project folder and navigate to `/src/components/`.<br/>
+Open the project folder and navigate to `frontend/src/components/`.<br/>
 You will find all the components used, and you can edit your information accordingly.
 
 ## Portfolio Breakdown
