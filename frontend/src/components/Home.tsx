@@ -21,7 +21,7 @@ const Home = () => {
                 {/* Image Section */}
                 <div className="sm:w-1/2 text-center">
                     <img
-                        src={isHovered ? '/me.png' : '/drawing.png'}
+                        src={isHovered ? '/me.jpeg' : '/me.jpeg'}
                         onMouseOver={() => setIsHovered(true)}
                         onMouseOut={() => setIsHovered(false)}
                         alt={isHovered ? 'Drawing' : 'Picture'}
