@@ -79,42 +79,26 @@ You will find all the components used, and you can edit your information accordi
 
 ## Portfolio Breakdown
 
-### 1. Home Page
+### 1. Landing page
 
 **Frontend:**
 - Built with React.js and styled using Tailwind CSS for a modern and responsive layout.
-- Features a hero section with a brief introduction and navigation links to other sections.
+- Features a "hero" section
 
-**Backend:**
-- No backend functionality required for static content.
-
-### 2. About Me
+### 2. About
 
 **Frontend:**
-- Utilizes React components to display a biography and professional journey.
+- Uses React components to display a biography and professional journey.
 - Styled with Tailwind CSS for consistency and responsiveness.
-
-**Backend:**
-- Static content, no backend processing required.
 
 ### 3. Projects
 
 **Frontend:**
-- A gallery of my GitHub projects, dynamically rendered using React.
+- A gallery of my projects, dynamically rendered using React.
 - Tailwind CSS ensures the section is visually appealing and mobile-friendly.
 
 **Backend:**
-- Fetches project data from the GitHub API using Node.js and Express.js to display the latest projects dynamically.
-
-### 4. Blog
-
-**Frontend:**
-- Uses React to create a blog section where I share insights and tutorials.
-- Tailwind CSS for styling to keep a consistent look and feel.
-
-**Backend:**
-- Node.js and Express.js handle blog post data.
-- Uses a MongoDB database to store and retrieve blog posts.
+- Fetches project data from my API that uses Node.js and Express.js to display the latest projects dynamically.
 
 ### 5. Contact
 
