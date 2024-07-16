@@ -58,13 +58,18 @@ Clone down this repository. You will need `node.js` and `git` installed globally
     npm install
     ```
 
-2. **In the project directory, you can run:**
+2. **In the backend directory, you can run:**
     ```sh
-    npm start
+    npm run dev
+    ```
+
+2. **In the frontend directory, you can run:**
+    ```sh
+    npm run dev
     ```
 
 Runs the app in the development mode.<br/>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.<br/>
+Open [http://localhost:5173](http://localhost:5173) to view it in the browser.<br/>
 The page will reload if you make edits.
 
 ## Usage Instructions
