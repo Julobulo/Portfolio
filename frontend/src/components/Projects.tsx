@@ -145,6 +145,11 @@ const Projects = () => {
                     src='/google cloud.svg'
                     style={{ height: "40px", width: "49px" }}
                 />
+            case "hono":
+                return <img
+                    src='/hono.svg'
+                    style={{ height: "40px", width: "31px" }}
+                />
             default:
                 return <FaIcons />;
         }
