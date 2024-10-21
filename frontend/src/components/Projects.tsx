@@ -111,7 +111,6 @@ const Projects = () => {
                 />
             case "tailwindcss":
             case "tailwind":
-                console.log('tailwind !!!!!')
                 return <img
                     src='/tailwind.svg'
                     style={{ height: "40px", width: "40px" }}
@@ -130,6 +129,11 @@ const Projects = () => {
                 return <img
                     src='/vite.svg'
                     style={{ height: "40px", width: "40px" }}
+                />
+            case "unity":
+                return <img
+                    src='/unity.svg'
+                    style={{ height: "40px", width: "110px" }}
                 />
             default:
                 return <FaIcons />;
