@@ -140,6 +140,11 @@ const Projects = () => {
                     src='/cloudflare workers.svg'
                     style={{ height: "40px", width: "120px" }}
                 />
+            case "googlecloud":
+                return <img
+                    src='/google cloud.svg'
+                    style={{ height: "40px", width: "49px" }}
+                />
             default:
                 return <FaIcons />;
         }
