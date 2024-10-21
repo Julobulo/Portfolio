@@ -135,7 +135,7 @@ const Projects = () => {
                     src='/unity.svg'
                     style={{ height: "40px", width: "110px" }}
                 />
-            case "cloudflare workers":
+            case "cloudflareworkers":
                 return <img
                     src='/cloudflare workers.svg'
                     style={{ height: "40px", width: "120px" }}
