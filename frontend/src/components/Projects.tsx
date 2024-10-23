@@ -56,7 +56,7 @@ const Projects = () => {
         description: string;
         code?: string;
         live?: string;
-        date: string;
+        date: Date;
     }
     const [projects, setProjects] = useState<Project[]>([]);
     const [loading, setLoading] = useState(true);
@@ -171,7 +171,7 @@ const Projects = () => {
                                 <div className='flex flex-row justify-between'>
                                     <div>
                                         <h2 className="text-xl font-semibold mb-2">{project.title}</h2>
-                                        <p className="text-xs text-gray-500 dark:text-white mb-2">Started: {project.date}</p>
+                                        <p className="text-xs text-gray-500 dark:text-white mb-2">Started: {new Date(project.date).toLocaleDateString('en-US', {year: 'numeric',month: 'long',day: 'numeric',})}</p>
                                     </div>
                                     <p
                                         className="inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10"
