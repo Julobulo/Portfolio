@@ -25,7 +25,7 @@ app.use(express.json()); // Middleware to parse JSON bodies
 app.get('/projects', async (request, response) => {
     const projects = await Project.find({},
         // { image: 0 }
-    ).limit(10);
+    ).sort({ date: -1 }).limit(10);
     return response.json(projects);
 })
 
