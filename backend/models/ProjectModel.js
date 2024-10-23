@@ -8,6 +8,7 @@ const projectSchema = new mongoose.Schema({
     timeItTook: { type: String, required: true },
     live: { type: String },
     code: { type: String },
+    dath: { type: Date },
 })
 
 const Project = mongoose.model('Project', projectSchema);
