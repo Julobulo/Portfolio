@@ -9,7 +9,7 @@ const About = () => {
                     </div>
                     <p className="text-sm md:text-base font-normal leading-relaxed first-line:uppercase first-line:tracking-widest first-letter:text-7xl first-letter:font-bold first-letter:text-black dark:first-letter:text-white first-letter:mr-3 first-letter:float-left">
                         I am a French teenager who loves coding, cybersecurity and sport. I had the pleasure to spend one year in the US thanks to my father, a researcher.
-                        There, I had the opportunity to go to Indiana University, where I met a lot of extraordinary people and <a href="link to C2 dev github">continued my cybersecurity journey</a>.
+                        There, I had the opportunity to go to Indiana University, where I met a lot of extraordinary people and <a href="https://github.com/Julobulo/C2">continued my cybersecurity journey</a>.
                     </p>
                     <p className="text-sm md:text-base font-normal leading-relaxed">
                         I am an experienced <span className="inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20">
