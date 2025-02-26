@@ -58,7 +58,8 @@ function sendMail(message, name, email) {
     // Send email
     transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
-            return console.log(`Error: ${error}`);
+            console.log(`Error: ${error}`);
+            return
         }
         console.log('Email sent: ' + info.response);
     });
@@ -86,7 +87,8 @@ app.post('/message', async (request, response) => {
         return response.status(400).json({ message: "error processing message" })
     }
     const newMessage = await Message.create({ name, email, message });
-    sendMail(message, name, email)
+    console.log('starting sendMail function');
+    sendMail(message, name, email);
     return response.status(201).json({ message: "successfully sent message!" });
 })
 
