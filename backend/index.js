@@ -57,6 +57,7 @@ function sendMail(message, name, email) {
     };
 
     // Send email
+    console.log('going to send mail');
     transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
             console.log(`Error: ${error}`);
@@ -64,6 +65,7 @@ function sendMail(message, name, email) {
         }
         console.log('Email sent: ' + info.response);
     });
+    console.log('sent mail');
 }
 
 app.post('/message', async (request, response) => {
