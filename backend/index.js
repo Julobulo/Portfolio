@@ -30,6 +30,7 @@ app.get('/projects', async (request, response) => {
 })
 
 function sendMail(message, name, email) {
+    console.log(`email sender: ${EMAIL_SENDER}, email receiver: ${EMAIL_RECEIVER}`);
     const subject = 'New message from your portfolio';
     const body = `
     Hey, you just received received the following message from your portfolio's contact form:
@@ -89,6 +90,7 @@ app.post('/message', async (request, response) => {
     const newMessage = await Message.create({ name, email, message });
     console.log('starting sendMail function');
     sendMail(message, name, email);
+    console.log('finished sendMail function');
     return response.status(201).json({ message: "successfully sent message!" });
 })
 
