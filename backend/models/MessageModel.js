@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
 
 const messageSchema = new mongoose.Schema({
+    createdAt: Date,
     name: { type: String, required: true },
     email: { type: String, required: true },
     message: { type: String, required: true },

@@ -90,7 +90,7 @@ app.post('/message', async (request, response) => {
     if (messagesSameContent.length > 0) {
         return response.status(400).json({ message: "error processing message" })
     }
-    const newMessage = await Message.create({ name, email, message });
+    const newMessage = await Message.create({ date: new Date(), name, email, message });
     console.log('starting sendMail function');
     sendMail(message, name, email);
     console.log('finished sendMail function');
