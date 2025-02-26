@@ -61,9 +61,10 @@ function sendMail(message, name, email) {
     transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
             console.log(`Error: ${error}`);
-            return
         }
-        console.log('Email sent: ' + info.response);
+        else {
+            console.log('Email sent: ' + info.response);
+        }
     });
     console.log('sent mail');
 }
