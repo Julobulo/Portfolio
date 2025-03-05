@@ -65,7 +65,10 @@ const Projects = () => {
         setLoading(true)
         axios.get(`${domainName}/projects`)
             .then((response) => {
-                setProjects(response.data);
+                const sortedProjects = response.data.sort(
+                    (a: Project, b: Project) => new Date(b.startDate).getTime() - new Date(a.startDate).getTime()
+                );
+                setProjects(sortedProjects);
                 setLoading(false)
             })
             .catch((error) => {
